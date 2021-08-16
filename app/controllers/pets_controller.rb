@@ -2,7 +2,7 @@ class PetsController < ApplicationController
   #belongs_to :user
 
   def index
-    raise
+
     @pets = Pet.all
   end
 

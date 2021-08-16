@@ -5,7 +5,7 @@ class CreatePets < ActiveRecord::Migration[6.0]
       t.string :species
       t.text :description
       t.float :price
-      t.references :owner_id, null: false, foreign_key: true
+      t.references :user, null: false, foreign_key: true
 
       t.timestamps
     end

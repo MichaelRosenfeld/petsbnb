@@ -1,7 +1,11 @@
-<h1>This is the pet index</h1>
+<h1>Available pets</h1>
+
 
 <ul>
 <% @pets.each do |pet| %>
 <li><%= link_to pet.name, pet_path(pet) %></li>
 <% end %>
 </ul>
+
+<%= link_to "Go back", root_path, class: "btn btn-info" %>
+<%= link_to "Add your pet", new_pet_path, class: "btn btn-info" %>

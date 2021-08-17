@@ -10,7 +10,7 @@ class PetsController < ApplicationController
   end
 
   def create
-    @pet = Pet.new()
+    @pet = Pet.new
   end
 
   def new

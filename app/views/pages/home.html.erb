@@ -1,3 +1,17 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
-<%= link_to "See all animals", pets_path %>
+<div class="container">
+  <div class="section1">
+    <h1>Rent a pet - simple & easy!</h1>
+    <p>Are you looking for an animal companion but don't want to commit yourself? Pet BnB allows you to rent pets and only enjoy the positive aspects of the pet owner. </p>
+  </div>
+  <div class="section2">
+    <h2>How does it work?</h2>
+    <p>As soon as the pet owner and pet friend have found each other on our site, they can meet the pet together. If it's a match between everyone, the new friend can spend time alone with the pet in the future and relieve the dog owner as necessary. </p>
+  </div>
+  <div class="section3">
+    <h2>What are you waiting for?</h2>
+    <p>Start today! Register and enjoy more free time as a pet owner or finally more time with an animal companion as an animal friend.</p>
+  </div>
+  <div class="cta">
+    <%= link_to "See all animals", pets_path, class: "btn btn-info" %>
+  </div>
+</div>

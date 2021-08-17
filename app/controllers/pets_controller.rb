@@ -1,5 +1,5 @@
 class PetsController < ApplicationController
-  belongs_to :user
+
 
   def index
     @pets = Pet.all

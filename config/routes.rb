@@ -7,7 +7,8 @@ Rails.application.routes.draw do
   get 'bookings/delete'
   get 'bookings/edit'
   get 'bookings/update'
-  devise_for :users
   root to: 'pages#home'
+  resources :users
+  devise_for :users
   resources :pets
 end

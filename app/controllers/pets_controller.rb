@@ -1,8 +1,7 @@
 class PetsController < ApplicationController
-  #belongs_to :user
+  # belongs_to :user
 
   def index
-
     @pets = Pet.all
   end
 
@@ -11,7 +10,7 @@ class PetsController < ApplicationController
   end
 
   def create
-    @pet = Pet.new()
+    @pet = Pet.new
   end
 
   def new

@@ -6,9 +6,3 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 # Trying something out
-
-313.times do
-  User.create(
-    name: Faker::Creature::Animal.name
-  )
-end

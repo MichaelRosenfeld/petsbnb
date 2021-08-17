@@ -1,11 +1,15 @@
-<h1>Available pets</h1>
-
-
-<ul>
-<% @pets.each do |pet| %>
-<li><%= link_to pet.name, pet_path(pet) %></li>
-<% end %>
-</ul>
-
-<%= link_to "Go back", root_path, class: "btn btn-info" %>
-<%= link_to "Add your pet", new_pet_path, class: "btn btn-info" %>
+<div class="container">
+  <div class="section1">
+    <h1>Available pets</h1>
+    <p>Are you looking for an animal companion but don't want to commit yourself? Pet BnB allows you to rent pets and only enjoy the positive aspects of the pet owner. </p>
+    <ul>
+    <% @pets.each do |pet| %>
+    <li><%= link_to pet.name, pet_path(pet) %></li>
+    <% end %>
+    </ul>
+  </div>
+  <div class="buttons">
+    <%= link_to "Go back", root_path, class: "btn btn-info" %>
+    <%= link_to "Add your pet", new_pet_path, class: "btn btn-info" %>
+  </div>
+</div>

@@ -1,6 +1,4 @@
 class BookingsController < ApplicationController
-
-
   def index
     @bookings = Booking.all
   end
@@ -10,7 +8,7 @@ class BookingsController < ApplicationController
   end
 
   def create
-    @booking = Booking.new()
+    @booking = Booking.new
   end
 
   def new
@@ -21,12 +19,12 @@ class BookingsController < ApplicationController
     @booking.save
   end
 
-#   def delete
-#   end
+  #   def delete
+  #   end
 
-#   def edit
-#   end
+  #   def edit
+  #   end
 
-#   def update
-#   end
- end
+  #   def update
+  #   end
+end

@@ -23,4 +23,3 @@ User.all.each do |user|
   end
 end
 p "#{Pet.count} pets were created"
-

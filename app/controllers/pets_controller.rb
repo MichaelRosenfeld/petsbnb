@@ -10,7 +10,10 @@ class PetsController < ApplicationController
   end
 
   def create
-    @pet = Pet.new
+    @pet = Pet.new(pet_params)
+    @pet.save
+
+    redirect_to pet_path(@pet)
   end
 
   def new
@@ -21,15 +24,9 @@ class PetsController < ApplicationController
     @pet.save
   end
 
-  # def delete
+  private
 
-  # end
-
-  # def edit
-
-  # end
-
-  # def update
-
-  # end
+  def pet_params
+    params.require(:pet).permit(:name, :species, :description, :price)
+  end
 end

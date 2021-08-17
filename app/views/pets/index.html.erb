@@ -1,16 +1,19 @@
 <div class="container">
 
   <div class="petshow">
-
-  
-
     <h1>Available pets</h1>
     <p>Are you looking for an animal companion but don't want to commit yourself? Pet BnB allows you to rent pets and only enjoy the positive aspects of the pet owner. </p>
     <ul>
     <% @pets.each do |pet| %>
+    <%= link_to pet_path(pet), class: "pet-link" do%>
 
-    <li><%= link_to pet.name, pet_path(pet) %>, <strong><%= pet.species %></strong>, <%= pet.price %>€ / day</li>
-
+    <li class="pet-card ">
+    <img class="pet-img"src="https://images.unsplash.com/photo-1425082661705-1834bfd09dca?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&dl=ricky-kharawala-adK3Vu70DEQ-unsplash.jpg" alt="">
+      <p class="pet-description">
+        <%= pet.name %>, <strong><%= pet.species %></strong>, <%= pet.price %>€ / day
+      </p>
+    </li>
+    <% end %>
     <% end %>
     </ul>
   </div>

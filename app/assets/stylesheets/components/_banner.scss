@@ -1,0 +1,21 @@
+.banner {
+
+  background-image: url(https://images.unsplash.com/photo-1546272989-40c92939c6c2?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2976&q=80);
+  background-size: cover;
+  background-position: center;
+  //  height: 300px;
+  // width: auto;
+  // color: FE9898;
+  // text-align: center;
+  // padding-top: 20vh;
+  padding: 150px 0;
+}
+.banner h1 {
+  margin: 0;
+  color: black;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  font-size: 32px;
+  font-weight: bold;
+  padding-left: 50px;
+
+}

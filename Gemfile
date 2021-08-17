@@ -25,7 +25,7 @@ gem 'simple_form'
 
 gem 'devise'
 
-# gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'
+
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
@@ -37,17 +37,20 @@ gem 'autoprefixer-rails', '10.2.5'
 gem 'font-awesome-sass'
 gem 'simple_form'
 
+gem 'faker'
+
 group :development, :test do
   gem 'pry-byebug'
   gem 'pry-rails'
   gem 'dotenv-rails'
-  gem 'faker'
+
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
 end
 
 group :development do
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
+  gem 'faker'
   gem 'web-console', '>= 3.3.0'
   gem 'listen', '~> 3.2'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring

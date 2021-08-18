@@ -1,14 +1,14 @@
 .banner {
 
-  background-image: url(https://images.unsplash.com/photo-1546272989-40c92939c6c2?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2976&q=80);
+  background-image: url('https://source.unsplash.com/1200x400/?animal, pets');
   background-size: cover;
-  background-position: center;
+  background-position: top;
   //  height: 300px;
   // width: auto;
   // color: FE9898;
   // text-align: center;
   // padding-top: 20vh;
-  padding: 150px 0;
+  padding: 200px 0;
   margin-bottom: 1rem;
 }
 .banner h1 {
@@ -18,5 +18,8 @@
   font-size: 32px;
   font-weight: bold;
   padding-left: 50px;
+  &:hover {
+    color: white;
+  }
 
 }

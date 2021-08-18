@@ -8,7 +8,14 @@ class PetsController < ApplicationController
   end
 
   def create
-    @pet = Pet.new
+    @pet = Pet.new(pet_params)
+    @pet.user = current_user
+    if @pet.save!
+      redirect_to pet_path(@pet)
+    else
+      render :new
+    end
+
   end
 
   def new
@@ -19,15 +26,9 @@ class PetsController < ApplicationController
     @pet.save
   end
 
-  # def delete
+  private
 
-  # end
-
-  # def edit
-
-  # end
-
-  # def update
-
-  # end
+  def pet_params
+    params.require(:pet).permit(:name, :species, :description, :price)
+  end
 end

@@ -1,22 +1,26 @@
 <div class="container">
 
-  <div class="petshow">
+  <div>
     <h1>Available pets</h1>
     <p>Are you looking for an animal companion but don't want to commit yourself? Pet BnB allows you to rent pets and only enjoy the positive aspects of the pet owner. </p>
-    <ul>
-    <% @pets.each do |pet| %>
-    <%= link_to pet_path(pet), class: "pet-link" do%>
-
-    <li class="pet-card ">
-    <img class="pet-img"src="https://images.unsplash.com/photo-1425082661705-1834bfd09dca?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&dl=ricky-kharawala-adK3Vu70DEQ-unsplash.jpg" alt="">
-      <p class="pet-description">
-        <%= pet.name %>, <strong><%= pet.species %></strong>, <%= pet.price %>€ / day
-      </p>
-    </li>
-    <% end %>
-    <% end %>
-    </ul>
+    <div class="pets-container">
+      <% @pets.each do |pet| %>
+        <%= link_to pet_path(pet), class: "pet-link" do%>
+          <div class="pet-card ">
+            <% if pet.photo.attached? %>
+              <%= cl_image_tag pet.photo.key, height: 300, width: 400, crop: :fill, class: "pet-img" %>
+            <% else %>
+              <%= image_tag "https://images.unsplash.com/photo-1601758177266-bc599de87707?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80", class: "pet-img" %>
+            <% end%>
+            <p class="pet-description">
+              <%= pet.name %>, <strong><%= pet.species %></strong>, <%= pet.price %>€ / day
+            </p>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
   </div>
+  <br>
   <div class="buttons">
     <%= link_to "Go back", root_path, class: "btn btn-info" %>
     <%= link_to "Add your pet", new_pet_path, class: "btn btn-info" %>

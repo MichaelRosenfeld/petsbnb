@@ -1,6 +1,6 @@
 <div class="pet-show-container">
   <div class=pet-image>
-
+    <%= cl_image_tag @pet.photo.key, height: 300, width: 400, crop: :fill %>
   </div>
 
   <div class="pet-details">

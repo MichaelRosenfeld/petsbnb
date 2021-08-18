@@ -24,6 +24,7 @@ gem 'jbuilder', '~> 2.7'
 gem 'simple_form'
 gem 'dotenv-rails', groups: [:development, :test]
 gem 'devise'
+gem 'cloudinary', '~> 1.16.0'
 
 
 

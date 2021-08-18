@@ -1,0 +1,23 @@
+.index-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 16px;
+  margin-bottom: 1rem;
+
+}
+.card-category {
+  width: 200px;
+  height: 200px;
+  background-size: cover;
+  border-radius: 50%;
+  box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.2);
+  &:hover {
+    transform: scale(1.05);
+  }
+}
+.card-category > h1 {
+  text-align: center;
+  color: beige;
+  padding-top: 80px;
+
+}

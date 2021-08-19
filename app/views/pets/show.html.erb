@@ -1,5 +1,16 @@
-<h1>See details for <%= @pet.name %></h1>
-<br>
-<p><%= @pet.description %></p>
-<p><%= @pet.price %></p>
-<p><%= @pet.user.email %></p>
+<div class="container">
+  <div class=pet-image>
+    <%= cl_image_tag @pet.photo.key, height: 300, width: 400, crop: :fill %>
+  </div>
+
+  <div class="pet-details">
+    <br>
+    <h1>See details for "<strong><%= @pet.name %></strong>"</h1>
+    <p><strong>Species: </strong> <%= @pet.species %></p>
+    <p><strong>Description: </strong><%= @pet.description %></p>
+    <p class="pricetag"><strong>Price:</strong> <%= @pet.price %>€ / day</p>
+    <p><%= mail_to @pet.user.email do %>
+    <strong>Contact owner!</strong>
+    <% end %>
+  </div>
+</div>

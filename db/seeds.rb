@@ -12,11 +12,13 @@ User.create!(email: 'michael.rosenfeld@gmail.com', password: 'XXXXXX')
 User.create!(email: 'syedanayab2014@hotmail.com', password: 'XXXXXX')
 User.create!(email: 'sascha.baridara@gmail.com', password: 'XXXXXX')
 p "Creating pets"
+
+species = ["cat", "dog", "bird", "hamster"]
 User.all.each do |user|
   9.times do
   Pet.create!(
     name: Faker::GreekPhilosophers.name,
-    species: Faker::Creature::Animal.name,
+    species: species.sample,
     description: Faker::Quotes::Shakespeare.as_you_like_it_quote,
     price:  Faker::Commerce.price.to_f,
     user: user
@@ -31,4 +33,3 @@ p "#{Pet.count} pets were created"
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 # Trying something out
-

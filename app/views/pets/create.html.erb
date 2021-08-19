@@ -1,8 +1,9 @@
-<%= form_with model: @pet do |f| %>
-  <%= f.text_field :name %>
-  <%= f.text_field :species %>
-  <%= f.text_area :body, size: "60x10" :description %>
-  <%= f.text_field :price %>
+<%= form_with model: @pet do |form| %>
+  <%= form.text_field :name %>
+  <%= form.text_field :species %>
+  <%= form.text_area :body, size: "60x10" :description %>
+  <%= form.text_field :price %>
+  <%= form.text_field :address %>
   <%= f.input :photo, as: :file %>
-  <%= f.submit %>
+  <%= form.submit %>
 <% end %>

@@ -1,10 +1,17 @@
 class PetsController < ApplicationController
 
   def index
+    # the `geocoded` scope filters only flats with coordinates (latitude & longitude)
     if params[:query].present?
       @pets = Pet.where(species: params[:query])
     else
       @pets = Pet.all
+    end
+    @markers = @pets.geocoded.map do |pet|
+      {
+        lat: pet.latitude,
+        lng: pet.longitude
+      }
     end
   end
 
@@ -49,6 +56,6 @@ class PetsController < ApplicationController
   private
 
   def pet_params
-    params.require(:pet).permit(:name, :species, :description, :price, :photo)
+    params.require(:pet).permit(:name, :species, :description, :price, :address, :photo)
   end
 end

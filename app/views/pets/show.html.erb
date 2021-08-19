@@ -13,4 +13,9 @@
     <strong>Contact owner!</strong>
     <% end %>
   </div>
+  <%= link_to "Book!", new_pet_booking_path(@pet), class: "btn btn-success" %>
+  <%= link_to "Back to all pets", pets_path, class: "btn btn-info" %>
+  <%= link_to "Edit pet", edit_pet_path(@pet), class: "btn btn-info" %>
+  <%= link_to "Delete pet", pet_path(@pet), method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-danger" %>
+
 </div>

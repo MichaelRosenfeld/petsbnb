@@ -1,4 +1,5 @@
 class PetsController < ApplicationController
+
   def index
     # the `geocoded` scope filters only flats with coordinates (latitude & longitude)
     if params[:query].present?
@@ -18,6 +19,16 @@ class PetsController < ApplicationController
     @pet = Pet.find(params[:id])
   end
 
+  def edit
+    @pet = Pet.find(params[:id])
+  end
+
+  def update
+    @pet = Pet.find(params[:id])
+    @pet = @pet.update(pet_params)
+    redirect_to pet_path
+  end
+
   def create
     @pet = Pet.new(pet_params)
     @pet.user = current_user
@@ -26,7 +37,6 @@ class PetsController < ApplicationController
     else
       render :new
     end
-
   end
 
   def new
@@ -35,6 +45,12 @@ class PetsController < ApplicationController
 
   def save
     @pet.save
+  end
+
+  def destroy
+    @pet = Pet.find(params[:id])
+    @pet.destroy
+    redirect_to pets_path
   end
 
   private

@@ -1,0 +1,17 @@
+.container {
+  margin-top: 20px;
+}
+
+.flex-container {
+  box-shadow: 0 0 3px 3px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content:space-evenly;
+}
+
+.edit-buttons {
+  width: 380px;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}

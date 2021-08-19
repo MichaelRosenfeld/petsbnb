@@ -1,21 +1,26 @@
 <div class="container">
-  <div class=pet-image>
-    <%= cl_image_tag @pet.photo.key, height: 300, width: 400, crop: :fill %>
-  </div>
+  <div class="flex-container">
+    <div class=pet-image>
+      <%= cl_image_tag @pet.photo.key, height: 300, width: 400, crop: :fill %>
+    </div>
 
-  <div class="pet-details">
-    <br>
-    <h1>See details for "<strong><%= @pet.name %></strong>"</h1>
-    <p><strong>Species: </strong> <%= @pet.species %></p>
-    <p><strong>Description: </strong><%= @pet.description %></p>
-    <p class="pricetag"><strong>Price:</strong> <%= @pet.price %>€ / day</p>
-    <p><%= mail_to @pet.user.email do %>
-    <strong>Contact owner!</strong>
+    <div class="pet-details">
+      <br>
+      <h1><strong><%= @pet.name %></strong></h1>
+      <p><strong>Species: </strong> <%= @pet.species %></p>
+      <p><strong>Description: </strong><%= @pet.description %></p>
+      <p class="pricetag"><strong>Price:</strong> <%= @pet.price %>€ / day</p>
+      <%= link_to "<b>Book now!<b>".html_safe, new_pet_booking_path(@pet), class: "btn btn-success btn-lg" %>
+    </div>
+  </div>
+  <div class="edit-buttons">
+    <% if @pet.user == current_user %>
+      <%= link_to "Back to all pets", pets_path, class: "btn btn-info" %>
+      <%= link_to "Edit pet", edit_pet_path(@pet), class: "btn btn-info" %>
+      <%= link_to "Delete pet", pet_path(@pet), method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-danger" %>
+    <% else %>
+      <%= link_to "Back to all pets", pets_path, class: "btn btn-info" %>
     <% end %>
-  </div>
-  <%= link_to "Book!", new_pet_booking_path(@pet), class: "btn btn-success" %>
-  <%= link_to "Back to all pets", pets_path, class: "btn btn-info" %>
-  <%= link_to "Edit pet", edit_pet_path(@pet), class: "btn btn-info" %>
-  <%= link_to "Delete pet", pet_path(@pet), method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-danger" %>
 
+  </div>
 </div>

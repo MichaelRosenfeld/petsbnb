@@ -35,6 +35,7 @@ import { initMapbox } from '../plugins/init_mapbox';
 flatpickr(".datepicker", {
 
 });
+
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
 

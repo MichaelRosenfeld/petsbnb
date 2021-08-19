@@ -3,7 +3,7 @@
   <%= f.input :species %>
   <%= f.input :description %>
   <%= f.input :price %>
-  <%= f.input :address %>
+  <%= f.input :address, input_html: { id: 'autocomplete_input'}%>
   <%= f.input :photo, as: :file %>
   <%= f.submit %>
 <% end %>

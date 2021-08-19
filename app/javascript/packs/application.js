@@ -31,6 +31,7 @@ require("flatpickr/dist/themes/dark.css");
 import 'mapbox-gl/dist/mapbox-gl.css';
 // internal imports
 import { initMapbox } from '../plugins/init_mapbox';
+import { initAutocomplete } from '../plugins/init_autocomplete';
 
 flatpickr(".datepicker", {
 
@@ -43,4 +44,5 @@ document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
   initMapbox();
+  initAutocomplete();
 });

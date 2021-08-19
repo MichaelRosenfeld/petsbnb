@@ -1,5 +1,6 @@
 <div class="banner">
   <h1> Rent a pet <strong> simple & easy!</strong></h1>
+  <%= link_to "See all pets!", pets_path, class: "btn btn-info btn-lg" %>
 </div>
 <div class="container">
   <div class="section1">
@@ -45,8 +46,8 @@
   </div>
   <br>
   <div class="cta">
-    <%= link_to "See all animals", pets_path, class: "btn btn-info" %>
-    <%= link_to "Get your pet listed!", new_pet_path, class: "btn btn-info" %>
+    <%= link_to "See all pets", pets_path, class: "btn btn-info btn-lg" %>
+    <%= link_to "Get your pet listed!", new_pet_path, class: "btn btn-info btn-lg" %>
   </div>
 </div>
     </div>

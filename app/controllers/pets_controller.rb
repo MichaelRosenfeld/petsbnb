@@ -1,4 +1,5 @@
 class PetsController < ApplicationController
+
   def index
     if params[:query].present?
       @pets = Pet.where(species: params[:query])
@@ -11,7 +12,7 @@ class PetsController < ApplicationController
     @pet = Pet.find(params[:id])
   end
 
-   def edit
+  def edit
     @pet = Pet.find(params[:id])
   end
 
@@ -37,6 +38,12 @@ class PetsController < ApplicationController
 
   def save
     @pet.save
+  end
+
+  def destroy
+    @pet = Pet.find(params[:id])
+    @pet.destroy
+    redirect_to pets_path
   end
 
   private

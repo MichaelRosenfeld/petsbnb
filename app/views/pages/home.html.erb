@@ -1,12 +1,12 @@
 <div class="banner">
-  <h1> Rent a pet <strong> simple & easy!</strong></h1>
-  <%= link_to "See all pets!", pets_path, class: "btn btn-info btn-lg" %>
+  <h1>PetsBnB <strong> - it's easy!</strong></h1>
+  <%= link_to "Rent a pet friend!", pets_path, class: "btn btn-info btn-lg" %>
 </div>
 <div class="container">
   <div class="section1">
     <br>
-    <h1> Rent a pet <strong> simple & easy!</strong></h1>
-    <p>Are you looking for an animal companion but don't want to commit yourself? Pet BnB allows you to rent pets and only enjoy the positive aspects of the pet owner. </p><br>
+    <h1>Feeling lonely? Looking for a friend?</h1>
+    <p>Love animals? Don't like to commit for too long? Simply rent a friend while renting a pet - with PetsBnB it's easy!</p><br>
     <div class="index-card">
       <%= link_to pets_path(:query => "Cat") do %>
       <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1579199931550-7496521679ea?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1153&q=80)">
@@ -36,13 +36,13 @@
 <br>
 <div class="section2">
     <h2>How does it work?</h2>
-    <p>As soon as the pet owner and pet friend have found each other on our site, they can meet the pet together. If it’s a match between everyone, the new friend can spend time alone with the pet in the future and relieve the dog owner as necessary.</p>
-
+    <p>Simply browse through the available pets and pick your future pet friend. Upon confirmation by the pet owner, meet your new pet friend, ready for you to be friended. And whenever you like, simply return your new friend.</p>
   </div>
+
   <br>
-  <div class="section3">
+   <div class="section4">
     <h2>What are you waiting for?</h2>
-    <p>Start today! Register and enjoy more free time as a pet owner or finally more time with an animal companion as an animal friend.</p>
+    <p>Your new friend is waiting for you! Get your shot of instant friendship! Register right now!</p>
   </div>
   <br>
   <div class="cta">
@@ -50,14 +50,5 @@
     <%= link_to "Get your pet listed!", new_pet_path, class: "btn btn-info btn-lg" %>
   </div>
 </div>
-    </div>
 
-  <div class="footer">
-  <div class="footer-links">
-    <a href="#"><i class="fab fa-github"></i></a>
-    <a href="#"><i class="fab fa-instagram"></i></a>
-    <a href="#"><i class="fab fa-facebook"></i></a>
-    <a href="#"><i class="fab fa-twitter"></i></a>
-    <a href="#"><i class="fab fa-linkedin"></i></a>
-  </div>
 </div>

@@ -1,6 +1,8 @@
 <%= form_with model: @pet do |form| %>
   <%= form.text_field :name %>
+
   <%= form.text_field :species, collection: ["Dog", "Cat", "Bird", "Hamster"]%>
+
   <%= form.text_area :body, size: "60x10" :description %>
   <%= form.text_field :price %>
   <%= form.text_field :address %>

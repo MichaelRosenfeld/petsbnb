@@ -33,10 +33,17 @@ import flatpickr from "flatpickr";
 require("flatpickr/dist/themes/dark.css");
 
 
+// CSS
+import 'mapbox-gl/dist/mapbox-gl.css';
+// internal imports
+import { initMapbox } from '../plugins/init_mapbox';
+
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
 
 document.addEventListener('turbolinks:load', () => {
+
   flatpickr(".datepicker", {});
+
   initMapbox();
 });

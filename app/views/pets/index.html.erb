@@ -3,28 +3,35 @@
   <div>
     <h1>Available pets</h1>
     <p>Are you looking for an animal companion but don't want to commit yourself? Pet BnB allows you to rent pets and only enjoy the positive aspects of the pet owner. </p>
-    <div class="pets-container">
-      <% @pets.each do |pet| %>
-        <%= link_to pet_path(pet), class: "pet-link" do%>
-          <div class="pet-card ">
-            <% if pet.photo.attached? %>
-              <%= cl_image_tag pet.photo.key, height: 300, width: 400, crop: :fill, class: "pet-img" %>
-            <% else %>
-              <%= image_tag "https://images.unsplash.com/photo-1601758177266-bc599de87707?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80", class: "pet-img" %>
-            <% end%>
-            <p class="pet-description">
-              <%= pet.name %>, <strong><%= pet.species %></strong>, <%= pet.price %>€ / day
-            </p>
-          </div>
+
+    <div class="d-flex" >
+      <div class="pets-container">
+        <% @pets.each do |pet| %>
+          <%= link_to pet_path(pet), class: "pet-link" do%>
+            <div class="pet-card ">
+              <% if pet.photo.attached? %>
+                <%= cl_image_tag pet.photo.key, height: 300, width: 400, crop: :fill, class: "pet-img" %>
+              <% else %>
+                <%= image_tag "https://images.unsplash.com/photo-1601758177266-bc599de87707?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80", class: "pet-img" %>
+              <% end%>
+              <p class="pet-description">
+                <%= pet.name %>, <strong><%= pet.species %></strong>, <%= pet.price %>€ / day
+              </p>
+            </div>
+          <% end %>
         <% end %>
-      <% end %>
+      </div>
+      <div class="map-container">
+      <div id="map"
+        style="width: 100%; height: 100vh;"
+        data-markers="<%= @markers.to_json %>"
+        data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+      </div>
+      </div>
     </div>
+
   </div>
-  <div id="map"
-     style="width: 100%; height: 600px;"
-     data-markers="<%= @markers.to_json %>"
-     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
-  </div>
+
   <div class="buttons">
     <%= link_to "Go back", root_path, class: "btn btn-info" %>
     <%= link_to "Add your pet", new_pet_path, class: "btn btn-info" %>

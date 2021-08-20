@@ -1,16 +1,35 @@
+.pets-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: fit-content;
+}
+
 .pet-link {
   color: black;
   text-decoration: none;
+  height: fit-content;
   &:hover {
     color: black;
     text-decoration: none;
   }
 }
 
+#map {
+  height: 100vh;
+  position: sticky;
+  top: 0;
+
+}
 .pet-card {
+  margin-top: 0 !important;
   list-style: none;
   width: 300px;
-  overflow: hidden;
+  grid-gap: 16px;
+  padding: 16px;
+  // display: grid;
+  // grid-template-columns: 1fr 1fr 1fr;
+  // overflow: hidden;
+  flex-grow: 1;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   margin: 16px;
@@ -18,14 +37,35 @@
 
 }
 
+@media(min-width: 100px) and (max-width: 1024px){
+  .pets-container {
+    grid-template-columns: 1fr;
+  }
+
+  .container{
+    max-width: 100%;
+  }
+
+.map-container {
+  width: 100% !important;
+}
+
+
+}
+
+
+
 .pet-img {
-  width: 300px;
+  width: 100%;
   height: 150px;
 }
 
-.pets-container {
-  flex-wrap: wrap;
-  display: flex;
-  justify-content: space-between;
+.pet-description {
+  margin: 0;
+  margin-top: 1rem;
+}
 
+
+.map-container {
+  width: 40%;
 }

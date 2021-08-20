@@ -1,4 +1,5 @@
 class PetsController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
     # the `geocoded` scope filters only flats with coordinates (latitude & longitude)
@@ -12,6 +13,7 @@ class PetsController < ApplicationController
         lat: pet.latitude,
         lng: pet.longitude,
         info_window: render_to_string(partial: "info_window", locals: { pet: pet })
+
       }
     end
   end

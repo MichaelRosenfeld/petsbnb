@@ -11,15 +11,21 @@
   padding: 200px 0;
   margin-bottom: 1rem;
 }
+
+.banner .btn {
+  margin-left: 50px;
+  margin-top: 15px;
+}
+
+.banner .btn:hover {
+  color: white;
+}
+
 .banner h1 {
   margin: 0;
   color: black;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  font-size: 32px;
+  font-size: 42px;
   font-weight: bold;
   padding-left: 50px;
-  &:hover {
-    color: white;
-  }
-
 }

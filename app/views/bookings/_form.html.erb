@@ -1,0 +1,6 @@
+<%= simple_form_for([@pet, @booking]) do |f| %>
+  <%= f.input :starts_at, input_html: { class: "datepicker"}%>
+  <%= f.input :ends_at, input_html: { class: "datepicker"} %>
+
+  <%= f.submit %>
+<% end %>

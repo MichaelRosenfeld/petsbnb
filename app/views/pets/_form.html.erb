@@ -1,6 +1,6 @@
 <%= simple_form_for(pet) do |f| %>
   <%= f.input :name %>
-  <%= f.input :species %>
+  <%= f.input :species, collection: ["Dog", "Cat", "Bird", "Hamster"] %>
   <%= f.input :description %>
   <%= f.input :price %>
   <%= f.input :address %>
